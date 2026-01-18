@@ -1,25 +1,10 @@
-class StringBuilder {
-  #value = "";
+const input = document.querySelector('#name-input')
+const span = document.querySelector('#name-output')
 
-  constructor(initialValue) {
-    this.#value = initialValue;
-  }
+input.addEventListener('input', inputValue)
 
-  getValue() {
-    return this.#value;
-  }
-
-  padEnd(str) {
-    this.#value += str;
-  }
-
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
-  }
-
+function inputValue(e){
+    const value = e.target.value.trim()
+    span.textContent = value || "Anonymous"
 }
+
